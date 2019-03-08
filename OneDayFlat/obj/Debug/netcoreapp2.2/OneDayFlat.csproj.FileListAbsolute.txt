@@ -50,3 +50,4 @@ D:\2 курс\Програмування 2 курс\C#\epam\OneDayFlat\OneDayFla
 D:\2 курс\Програмування 2 курс\C#\epam\OneDayFlat\OneDayFlat\obj\Debug\netcoreapp2.2\Razor\Views\Users\Index.g.cshtml.cs
 D:\2 курс\Програмування 2 курс\C#\epam\OneDayFlat\OneDayFlat\obj\Debug\netcoreapp2.2\Razor\Views\Account\Login.g.cshtml.cs
 D:\2 курс\Програмування 2 курс\C#\epam\OneDayFlat\OneDayFlat\obj\Debug\netcoreapp2.2\Razor\Views\Account\Register.g.cshtml.cs
+D:\2 курс\Програмування 2 курс\C#\epam\OneDayFlat\OneDayFlat\obj\Debug\netcoreapp2.2\Razor\Views\UserLoggedIn\HomePage.g.cshtml.cs

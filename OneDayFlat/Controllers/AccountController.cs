@@ -35,7 +35,7 @@ namespace OneDayFlat.Controllers
                 {
                     await Authenticate(model.Login); 
 
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("HomePage", "UserLoggedIn");
                 }
                 ModelState.AddModelError("", "Некоректні логін і(або) пароль");
             }
@@ -56,7 +56,7 @@ namespace OneDayFlat.Controllers
                 if (user == null)
                 {
                     
-                    db.User.Add(new User {Name=model.Name, Login = model.Login, Number=model.Number, Password = model.Password});
+                    db.User.Add(new User {Name=model.Name, Login = model.Login, Number=model.Number, Password = model.Password });
                     await db.SaveChangesAsync();
 
                     await Authenticate(model.Login); 
