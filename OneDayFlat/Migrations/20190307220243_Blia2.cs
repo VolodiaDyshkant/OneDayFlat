@@ -26,10 +26,10 @@ namespace OneDayFlat.Migrations
                         principalColumn: "RoomID",
                         onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
-                        name: "FK_UserFlat_User_UserID",
+                        name: "FK_UserFlat_User_UserForeignKey",
                         column: x => x.UserID,
                         principalTable: "User",
-                        principalColumn: "UserID",
+                        principalColumn: "UserForeigKey",
                         onDelete: ReferentialAction.NoAction);
                 });
 

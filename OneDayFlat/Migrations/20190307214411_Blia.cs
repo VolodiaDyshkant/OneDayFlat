@@ -25,14 +25,14 @@ namespace OneDayFlat.Migrations
                 name: "Day",
                 columns: table => new
                 {
-                    DayID = table.Column<int>(nullable: false)
+                    DayForeignKey = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Booked = table.Column<bool>(nullable: false),
                     CalendarID = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Day", x => x.DayID);
+                    table.PrimaryKey("PK_Day", x => x.DayForeignKey);
                     table.ForeignKey(
                         name: "FK_Day_Calendar_CalendarID",
                         column: x => x.CalendarID,
@@ -73,16 +73,16 @@ namespace OneDayFlat.Migrations
                     Login = table.Column<string>(nullable: false),
                     Password = table.Column<string>(nullable: false),
                     Number = table.Column<string>(nullable: true),
-                    DayForeignKey = table.Column<int>(nullable: false)
+                    DayForeignkey = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_User", x => x.UserID);
                     table.ForeignKey(
-                        name: "FK_User_Day_DayForeignKey",
-                        column: x => x.DayForeignKey,
+                        name: "FK_User_Day_DayForeignkey",
+                        column: x => x.DayForeignkey,
                         principalTable: "Day",
-                        principalColumn: "DayID",
+                        principalColumn: "DayForeignkey",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -92,9 +92,9 @@ namespace OneDayFlat.Migrations
                 column: "CalendarID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_User_DayForeignKey",
+                name: "IX_User_DayForeignkey",
                 table: "User",
-                column: "DayForeignKey",
+                column: "DayForeignkey",
                 unique: true);
         }
 

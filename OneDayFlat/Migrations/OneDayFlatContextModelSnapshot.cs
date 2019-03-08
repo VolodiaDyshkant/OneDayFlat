@@ -34,7 +34,7 @@ namespace OneDayFlat.Migrations
 
             modelBuilder.Entity("OneDayFlat.Models.Day", b =>
                 {
-                    b.Property<int>("DayID")
+                    b.Property<int>("DayForeignKey")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -42,7 +42,7 @@ namespace OneDayFlat.Migrations
 
                     b.Property<int>("CalendarID");
 
-                    b.HasKey("DayID");
+                    b.HasKey("DayForeignKey");
 
                     b.HasIndex("CalendarID");
 
@@ -74,7 +74,7 @@ namespace OneDayFlat.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("DayForeignKey");
+                    b.Property<int>("DayForeigKey");
 
                     b.Property<string>("Login")
                         .IsRequired();
@@ -88,7 +88,7 @@ namespace OneDayFlat.Migrations
 
                     b.HasKey("UserID");
 
-                    b.HasIndex("DayForeignKey")
+                    b.HasIndex("DayForeigKey")
                         .IsUnique();
 
                     b.ToTable("User");

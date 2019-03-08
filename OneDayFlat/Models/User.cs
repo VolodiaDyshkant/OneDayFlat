@@ -17,9 +17,9 @@ namespace OneDayFlat.Models
         [Required(ErrorMessage = "Please enter your password")]
         public string Password { get; set; }
         public string Number { get; set; }
-        public int DayForeignKey { get; set; }
-        [ForeignKey("DayForeignKey")]
-        public Day Day { get; set; }
+        [ForeignKey("Day")]
+        public int? DayForeignKey { get; set; }
+        public virtual Day Day { get; set; }
         public IList<UserFlat> UserFlat { get; set; } = new List<UserFlat>();
     }
 }

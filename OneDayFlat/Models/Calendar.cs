@@ -10,6 +10,7 @@ namespace OneDayFlat.Models
         public int CalendarID { get; set; }
         public DateTime CurrentTime { get; set; }
 
+        public int FlatID { get; set; }
         public virtual Flat Flat { get; set; }
         public IList<Day> Days { get; set; }
     }

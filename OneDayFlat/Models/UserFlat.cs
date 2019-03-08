@@ -9,12 +9,12 @@ namespace OneDayFlat.Models
 {
     public class UserFlat
     {
-        [Key]
+       // [Key]
         public int UserFlatID {get;set;}
-        [ForeignKey("UserID")]
+        //[ForeignKey("User")]
         public int UserID { get; set; }
         public User User { get; set; }
-
+        //[ForeignKey("Flat")]
         public int FlatID { get; set; }
         public Flat Flat { get; set; }
     }
