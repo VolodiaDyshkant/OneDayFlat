@@ -17,6 +17,8 @@ namespace OneDayFlat.Models
         [Required(ErrorMessage = "Please enter your password")]
         public string Password { get; set; }
         public string Number { get; set; }
+        public int RoleID { get; set; }
+        public Role Role { get; set; }
         [ForeignKey("Day")]
         public int? DayForeignKey { get; set; }
         public virtual Day Day { get; set; }

@@ -33,7 +33,7 @@ namespace OneDayFlat.Controllers
                 User user = await db.User.FirstOrDefaultAsync(u => u.Login == model.Login && u.Password == model.Password);
                 if (user != null)
                 {
-                    await Authenticate(model.Login); 
+                    await Authenticate(user); 
 
                     return RedirectToAction("HomePage", "UserLoggedIn");
                 }
@@ -59,7 +59,7 @@ namespace OneDayFlat.Controllers
                     db.User.Add(new User {Name=model.Name, Login = model.Login, Number=model.Number, Password = model.Password });
                     await db.SaveChangesAsync();
 
-                    await Authenticate(model.Login); 
+                    await Authenticate(user); 
 
                     return RedirectToAction("Index", "Home");
                 }
@@ -69,12 +69,14 @@ namespace OneDayFlat.Controllers
             return View(model);
         }
 
-        private async Task Authenticate(string userName)
+        private async Task Authenticate(User user)
         {
             
             var claims = new List<Claim>
             {
-                new Claim(ClaimsIdentity.DefaultNameClaimType, userName)
+                //new Claim(ClaimsIdentity.DefaultNameClaimType, userName)
+                new Claim(ClaimsIdentity.DefaultNameClaimType, user.Login),
+                new Claim(ClaimsIdentity.DefaultRoleClaimType, user.Role?.Name)
             };
            
             ClaimsIdentity id = new ClaimsIdentity(claims, "ApplicationCookie", ClaimsIdentity.DefaultNameClaimType, ClaimsIdentity.DefaultRoleClaimType);

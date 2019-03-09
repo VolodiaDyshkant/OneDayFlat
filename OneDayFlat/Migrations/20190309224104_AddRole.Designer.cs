@@ -10,8 +10,8 @@ using OneDayFlat.Data;
 namespace OneDayFlat.Migrations
 {
     [DbContext(typeof(OneDayFlatContext))]
-    [Migration("20190307220243_Blia2")]
-    partial class Blia2
+    [Migration("20190309224104_AddRole")]
+    partial class AddRole
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -29,6 +29,8 @@ namespace OneDayFlat.Migrations
 
                     b.Property<DateTime>("CurrentTime");
 
+                    b.Property<int>("FlatID");
+
                     b.HasKey("CalendarID");
 
                     b.ToTable("Calendar");
@@ -44,6 +46,8 @@ namespace OneDayFlat.Migrations
 
                     b.Property<int>("CalendarID");
 
+                    b.Property<int?>("UserID");
+
                     b.HasKey("DayID");
 
                     b.HasIndex("CalendarID");
@@ -53,7 +57,11 @@ namespace OneDayFlat.Migrations
 
             modelBuilder.Entity("OneDayFlat.Models.Flat", b =>
                 {
-                    b.Property<int>("RoomID");
+                    b.Property<int>("RoomID")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("CalendarID");
 
                     b.Property<string>("City");
 
@@ -67,7 +75,35 @@ namespace OneDayFlat.Migrations
 
                     b.HasKey("RoomID");
 
+                    b.HasIndex("CalendarID")
+                        .IsUnique();
+
                     b.ToTable("Flat");
+                });
+
+            modelBuilder.Entity("OneDayFlat.Models.Role", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Role");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "admin"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "user"
+                        });
                 });
 
             modelBuilder.Entity("OneDayFlat.Models.User", b =>
@@ -76,7 +112,7 @@ namespace OneDayFlat.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("DayForeignKey");
+                    b.Property<int?>("DayForeignKey");
 
                     b.Property<string>("Login")
                         .IsRequired();
@@ -88,12 +124,26 @@ namespace OneDayFlat.Migrations
                     b.Property<string>("Password")
                         .IsRequired();
 
+                    b.Property<int>("RoleID");
+
                     b.HasKey("UserID");
 
                     b.HasIndex("DayForeignKey")
-                        .IsUnique();
+                        .IsUnique()
+                        .HasFilter("[DayForeignKey] IS NOT NULL");
+
+                    b.HasIndex("RoleID");
 
                     b.ToTable("User");
+
+                    b.HasData(
+                        new
+                        {
+                            UserID = 1,
+                            Login = "admin@gmail.com",
+                            Password = "123456",
+                            RoleID = 1
+                        });
                 });
 
             modelBuilder.Entity("OneDayFlat.Models.UserFlat", b =>
@@ -127,7 +177,7 @@ namespace OneDayFlat.Migrations
                 {
                     b.HasOne("OneDayFlat.Models.Calendar", "Calendar")
                         .WithOne("Flat")
-                        .HasForeignKey("OneDayFlat.Models.Flat", "RoomID")
+                        .HasForeignKey("OneDayFlat.Models.Flat", "CalendarID")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
@@ -135,7 +185,11 @@ namespace OneDayFlat.Migrations
                 {
                     b.HasOne("OneDayFlat.Models.Day", "Day")
                         .WithOne("User")
-                        .HasForeignKey("OneDayFlat.Models.User", "DayForeignKey")
+                        .HasForeignKey("OneDayFlat.Models.User", "DayForeignKey");
+
+                    b.HasOne("OneDayFlat.Models.Role", "Role")
+                        .WithMany("Users")
+                        .HasForeignKey("RoleID")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
