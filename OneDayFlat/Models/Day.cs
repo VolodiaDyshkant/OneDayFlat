@@ -15,7 +15,7 @@ namespace OneDayFlat.Models
         public bool Booked { get; set; }
         
         //[ForeignKey("Calendar")]
-        public int CalendarID { get; set; }
+        public int? CalendarID { get; set; }
         public Calendar Calendar { get; set; }
 
         //[ForeignKey("User")]
