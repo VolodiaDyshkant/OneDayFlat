@@ -10,7 +10,7 @@ namespace OneDayFlat.Controllers
 {
     public class UserLoggedInController : Controller
     {
-        //[Authorize(Users )]
+        [Authorize(Roles="admin")]
         public IActionResult HomePage()
         {
             return View();

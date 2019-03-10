@@ -30,7 +30,9 @@ namespace OneDayFlat.Controllers
         {
             if (ModelState.IsValid)
             {
-                User user = await db.User.FirstOrDefaultAsync(u => u.Login == model.Login && u.Password == model.Password);
+                User user = await db.User
+                     .Include(u => u.Role)
+                     .FirstOrDefaultAsync(u => u.Login == model.Login && u.Password == model.Password);
                 if (user != null)
                 {
                     await Authenticate(user); 
@@ -56,7 +58,13 @@ namespace OneDayFlat.Controllers
                 if (user == null)
                 {
                     
-                    db.User.Add(new User {Name=model.Name, Login = model.Login, Number=model.Number, Password = model.Password });
+                    user = new User {Name=model.Name, Login = model.Login, Number=model.Number, Password = model.Password };
+                    Role userRole = await db.Role.FirstOrDefaultAsync(r => r.Name == "user");
+                    if (userRole != null)
+                    {
+                        user.Role = userRole;
+                    }
+                    db.User.Add(user);
                     await db.SaveChangesAsync();
 
                     await Authenticate(user); 
