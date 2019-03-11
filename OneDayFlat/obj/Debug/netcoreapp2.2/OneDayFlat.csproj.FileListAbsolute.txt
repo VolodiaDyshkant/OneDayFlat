@@ -38,11 +38,6 @@ D:\2 курс\Програмування 2 курс\C#\epam\OneDayFlat\OneDayFla
 D:\2 курс\Програмування 2 курс\C#\epam\OneDayFlat\OneDayFlat\obj\Debug\netcoreapp2.2\Razor\Views\Days\Details.g.cshtml.cs
 D:\2 курс\Програмування 2 курс\C#\epam\OneDayFlat\OneDayFlat\obj\Debug\netcoreapp2.2\Razor\Views\Days\Edit.g.cshtml.cs
 D:\2 курс\Програмування 2 курс\C#\epam\OneDayFlat\OneDayFlat\obj\Debug\netcoreapp2.2\Razor\Views\Days\Index.g.cshtml.cs
-D:\2 курс\Програмування 2 курс\C#\epam\OneDayFlat\OneDayFlat\obj\Debug\netcoreapp2.2\Razor\Views\Flats\Create.g.cshtml.cs
-D:\2 курс\Програмування 2 курс\C#\epam\OneDayFlat\OneDayFlat\obj\Debug\netcoreapp2.2\Razor\Views\Flats\Delete.g.cshtml.cs
-D:\2 курс\Програмування 2 курс\C#\epam\OneDayFlat\OneDayFlat\obj\Debug\netcoreapp2.2\Razor\Views\Flats\Details.g.cshtml.cs
-D:\2 курс\Програмування 2 курс\C#\epam\OneDayFlat\OneDayFlat\obj\Debug\netcoreapp2.2\Razor\Views\Flats\Edit.g.cshtml.cs
-D:\2 курс\Програмування 2 курс\C#\epam\OneDayFlat\OneDayFlat\obj\Debug\netcoreapp2.2\Razor\Views\Flats\Index.g.cshtml.cs
 D:\2 курс\Програмування 2 курс\C#\epam\OneDayFlat\OneDayFlat\obj\Debug\netcoreapp2.2\Razor\Views\Users\Create.g.cshtml.cs
 D:\2 курс\Програмування 2 курс\C#\epam\OneDayFlat\OneDayFlat\obj\Debug\netcoreapp2.2\Razor\Views\Users\Delete.g.cshtml.cs
 D:\2 курс\Програмування 2 курс\C#\epam\OneDayFlat\OneDayFlat\obj\Debug\netcoreapp2.2\Razor\Views\Users\Details.g.cshtml.cs
@@ -51,3 +46,9 @@ D:\2 курс\Програмування 2 курс\C#\epam\OneDayFlat\OneDayFla
 D:\2 курс\Програмування 2 курс\C#\epam\OneDayFlat\OneDayFlat\obj\Debug\netcoreapp2.2\Razor\Views\Account\Login.g.cshtml.cs
 D:\2 курс\Програмування 2 курс\C#\epam\OneDayFlat\OneDayFlat\obj\Debug\netcoreapp2.2\Razor\Views\Account\Register.g.cshtml.cs
 D:\2 курс\Програмування 2 курс\C#\epam\OneDayFlat\OneDayFlat\obj\Debug\netcoreapp2.2\Razor\Views\UserLoggedIn\HomePage.g.cshtml.cs
+D:\2 курс\Програмування 2 курс\C#\epam\OneDayFlat\OneDayFlat\obj\Debug\netcoreapp2.2\Razor\Views\FlatTable\Create.g.cshtml.cs
+D:\2 курс\Програмування 2 курс\C#\epam\OneDayFlat\OneDayFlat\obj\Debug\netcoreapp2.2\Razor\Views\FlatTable\Delete.g.cshtml.cs
+D:\2 курс\Програмування 2 курс\C#\epam\OneDayFlat\OneDayFlat\obj\Debug\netcoreapp2.2\Razor\Views\FlatTable\Details.g.cshtml.cs
+D:\2 курс\Програмування 2 курс\C#\epam\OneDayFlat\OneDayFlat\obj\Debug\netcoreapp2.2\Razor\Views\FlatTable\Edit.g.cshtml.cs
+D:\2 курс\Програмування 2 курс\C#\epam\OneDayFlat\OneDayFlat\obj\Debug\netcoreapp2.2\Razor\Views\FlatTable\Index.g.cshtml.cs
+D:\2 курс\Програмування 2 курс\C#\epam\OneDayFlat\OneDayFlat\obj\Debug\netcoreapp2.2\Razor\Views\FlatTable\ShowFields.g.cshtml.cs

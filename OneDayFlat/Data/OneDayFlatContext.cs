@@ -15,10 +15,12 @@ namespace OneDayFlat.Data
         }
         public DbSet<User> User { get; set; }
         public DbSet<Flat> Flat { get; set; }
+        public DbSet<Image> Image { get; set; }
         public DbSet<Calendar> Calendar { get; set; }
         public DbSet<Day> Day { get; set; }
         public DbSet<UserFlat> UserFlat { get; set; }
         public DbSet<Role> Role { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -28,6 +30,8 @@ namespace OneDayFlat.Data
             modelBuilder.Entity<Day>().ToTable("Day");
             modelBuilder.Entity<UserFlat>().ToTable("UserFlat");
             modelBuilder.Entity<Role>().ToTable("Role");
+            modelBuilder.Entity<Image>().ToTable("Image");
+
             //string adminRoleName = "admin";
             //string userRoleName = "user";
 

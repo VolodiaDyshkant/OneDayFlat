@@ -37,7 +37,7 @@ namespace OneDayFlat.Controllers
                 {
                     await Authenticate(user); 
 
-                    return RedirectToAction("HomePage", "UserLoggedIn");
+                    return RedirectToAction("Index", "FlatTable");
                 }
                 ModelState.AddModelError("", "Некоректні логін і(або) пароль");
             }
