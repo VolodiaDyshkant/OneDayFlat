@@ -13049,11 +13049,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\2 курс\\Програмування 2 курс\\C#\\epam\\OneDayFlat\\OneDayFlat\\OneDayFlat.csproj",
+      "projectUniqueName": "D:\\2 курс\\Програмування\\C#\\epam\\OneDayFlat\\OneDayFlat\\OneDayFlat.csproj",
       "projectName": "OneDayFlat",
-      "projectPath": "D:\\2 курс\\Програмування 2 курс\\C#\\epam\\OneDayFlat\\OneDayFlat\\OneDayFlat.csproj",
+      "projectPath": "D:\\2 курс\\Програмування\\C#\\epam\\OneDayFlat\\OneDayFlat\\OneDayFlat.csproj",
       "packagesPath": "C:\\Users\\volod\\.nuget\\packages\\",
-      "outputPath": "D:\\2 курс\\Програмування 2 курс\\C#\\epam\\OneDayFlat\\OneDayFlat\\obj\\",
+      "outputPath": "D:\\2 курс\\Програмування\\C#\\epam\\OneDayFlat\\OneDayFlat\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

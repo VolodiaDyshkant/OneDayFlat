@@ -16,4 +16,10 @@
     <PackageReference Include="System.Net.Http" Version="4.3.4" />
   </ItemGroup>
 
+
+  <ItemGroup>
+    <Folder Include="Views\UploadImage\" />
+    <Folder Include="wwwroot\Files\" />
+  </ItemGroup>
+
 </Project>

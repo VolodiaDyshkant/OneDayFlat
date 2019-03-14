@@ -1,0 +1,1 @@
+alter table Flat add ImageId int not null;
