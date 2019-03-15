@@ -19,21 +19,6 @@ namespace OneDayFlat.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("OneDayFlat.Models.Calendar", b =>
-                {
-                    b.Property<int>("CalendarID")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("CurrentTime");
-
-                    b.Property<int>("FlatID");
-
-                    b.HasKey("CalendarID");
-
-                    b.ToTable("Calendar");
-                });
-
             modelBuilder.Entity("OneDayFlat.Models.Day", b =>
                 {
                     b.Property<int>("DayID")
@@ -42,13 +27,13 @@ namespace OneDayFlat.Migrations
 
                     b.Property<bool>("Booked");
 
-                    b.Property<int>("CalendarID");
+                    b.Property<int>("FlatID");
 
                     b.Property<int?>("UserID");
 
                     b.HasKey("DayID");
 
-                    b.HasIndex("CalendarID");
+                    b.HasIndex("FlatID");
 
                     b.ToTable("Day");
                 });
@@ -59,24 +44,37 @@ namespace OneDayFlat.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("CalendarID");
-
-                    b.Property<string>("City");
-
-                    b.Property<string>("Description");
+                    b.Property<string>("Description")
+                        .IsRequired();
 
                     b.Property<byte[]>("Image");
 
-                    b.Property<string>("OwnerName");
+                    b.Property<string>("OwnerName")
+                        .IsRequired();
 
-                    b.Property<string>("PhoneNumber");
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired();
+
+                    b.Property<decimal>("Price");
 
                     b.HasKey("RoomID");
 
-                    b.HasIndex("CalendarID")
-                        .IsUnique();
-
                     b.ToTable("Flat");
+                });
+
+            modelBuilder.Entity("OneDayFlat.Models.Image", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name");
+
+                    b.Property<string>("Path");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Image");
                 });
 
             modelBuilder.Entity("OneDayFlat.Models.Role", b =>
@@ -165,17 +163,9 @@ namespace OneDayFlat.Migrations
 
             modelBuilder.Entity("OneDayFlat.Models.Day", b =>
                 {
-                    b.HasOne("OneDayFlat.Models.Calendar", "Calendar")
+                    b.HasOne("OneDayFlat.Models.Flat", "Flat")
                         .WithMany("Days")
-                        .HasForeignKey("CalendarID")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("OneDayFlat.Models.Flat", b =>
-                {
-                    b.HasOne("OneDayFlat.Models.Calendar", "Calendar")
-                        .WithOne("Flat")
-                        .HasForeignKey("OneDayFlat.Models.Flat", "CalendarID")
+                        .HasForeignKey("FlatID")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 

@@ -13,10 +13,10 @@ namespace OneDayFlat.Models
         public int DayID { get; set; }
 
         public bool Booked { get; set; }
-        
+
         //[ForeignKey("Calendar")]
-        public int? CalendarID { get; set; }
-        public Calendar Calendar { get; set; }
+        public int FlatID { get; set; }
+        public Flat Flat { get; set; }
 
         //[ForeignKey("User")]
         public int? UserID { get; set; }

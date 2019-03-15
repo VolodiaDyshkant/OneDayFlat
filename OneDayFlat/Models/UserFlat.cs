@@ -9,8 +9,8 @@ namespace OneDayFlat.Models
 {
     public class UserFlat
     {
-       // [Key]
-        public int UserFlatID {get;set;}
+        // [Key]
+        public int UserFlatID { get; set; }
         //[ForeignKey("User")]
         public int UserID { get; set; }
         public User User { get; set; }
