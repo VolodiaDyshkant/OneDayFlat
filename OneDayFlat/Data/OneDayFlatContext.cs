@@ -15,11 +15,21 @@ namespace OneDayFlat.Data
         }
         public DbSet<User> User { get; set; }
         public DbSet<Flat> Flat { get; set; }
+<<<<<<< HEAD
         
         public DbSet<Day> Day { get; set; }
         public DbSet<UserFlat> UserFlat { get; set; }
         public DbSet<Role> Role { get; set; }
         public DbSet<Image> Image { get; set; }
+=======
+        //public DbSet<tblImage> Image { get; set; }
+        public DbSet<Calendar> Calendar { get; set; }
+        public DbSet<Day> Day { get; set; }
+        public DbSet<UserFlat> UserFlat { get; set; }
+        public DbSet<Role> Role { get; set; }
+        
+
+>>>>>>> 432ee527db83bfbdf2b81d057ddd87aa624c860d
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -29,13 +39,28 @@ namespace OneDayFlat.Data
             modelBuilder.Entity<Day>().ToTable("Day");
             modelBuilder.Entity<UserFlat>().ToTable("UserFlat");
             modelBuilder.Entity<Role>().ToTable("Role");
+<<<<<<< HEAD
             modelBuilder.Entity<Image>().ToTable("Image");
             string adminRoleName = "admin";
             string userRoleName = "user";
+=======
+            //modelBuilder.Entity<tblImage>().ToTable("Image");
+
+
+            //string adminRoleName = "admin";
+            //string userRoleName = "user";
+>>>>>>> 432ee527db83bfbdf2b81d057ddd87aa624c860d
 
             string adminEmail = "admin@gmail.com";
             string adminPassword = "123456";
 
+<<<<<<< HEAD
+=======
+
+            //Role adminRole = new Role { Id = 1, Name = adminRoleName };
+            //Role userRole = new Role { Id = 2, Name = userRoleName };
+            //User adminUser = new User { UserID = 1, Login = adminEmail, Password = adminPassword, RoleID = adminRole.Id };
+>>>>>>> 432ee527db83bfbdf2b81d057ddd87aa624c860d
 
             Role adminRole = new Role { Id = 1, Name = adminRoleName };
             Role userRole = new Role { Id = 2, Name = userRoleName };

@@ -16,7 +16,12 @@
 
 
   <ItemGroup>
+<<<<<<< HEAD
     <Folder Include="wwwroot\File\" />
+=======
+    <Folder Include="Views\UploadImage\" />
+    <Folder Include="wwwroot\Files\" />
+>>>>>>> 432ee527db83bfbdf2b81d057ddd87aa624c860d
   </ItemGroup>
 
 </Project>

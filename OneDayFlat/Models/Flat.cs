@@ -23,6 +23,7 @@ namespace OneDayFlat.Models
         [Required(ErrorMessage = "Please enter a description")]
         [DataType(DataType.MultilineText)]
         public string Description { get; set; }
+<<<<<<< HEAD
 
         [Required]
         [Range(0.01, double.MaxValue, ErrorMessage = "Please enter a positive price")]
@@ -37,6 +38,13 @@ namespace OneDayFlat.Models
         //public int CalendarID { get; set; }
         //public virtual Calendar Calendar { get; set; }
 
+=======
+        //public List<tblImage> Image { get; set; }
+       // public byte[] Image { get; set; }
+        [ForeignKey("Calendar")]
+        public int CalendarID { get; set; }
+        public virtual Calendar Calendar { get; set; }
+>>>>>>> 432ee527db83bfbdf2b81d057ddd87aa624c860d
         public List<UserFlat> UserFlat { get; set; }
         public IList<Day> Days { get; set; }
     }
