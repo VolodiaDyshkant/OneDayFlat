@@ -50,7 +50,6 @@ namespace OneDayFlat.Controllers
         // GET: FlatTableView/Create
         public IActionResult Create()
         {
-            
             return View();
         }
         //public IActionResult Create()
@@ -62,17 +61,6 @@ namespace OneDayFlat.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        //public async Task<IActionResult> Create([Bind("RoomID,OwnerName,PhoneNumber,Description,Price,Image,CalendarID")] Flat flat)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        _context.Add(flat);
-        //        await _context.SaveChangesAsync();
-        //        return RedirectToAction(nameof(Index));
-        //    }
-        //    ViewData["CalendarID"] = new SelectList(_context.Set<Calendar>(), "CalendarID", "CalendarID", flat.CalendarID);
-        //    return View(flat);
-        //}
         public IActionResult Create(FlatViewImage pvm)
         {
 
@@ -130,61 +118,7 @@ namespace OneDayFlat.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        //public async Task<IActionResult> Edit(int id, [Bind("Id,OvnerName,PhoneNumber,Description,Price,Image,Day")] Flat flat, FlatViewImage pvm)
-        //{
-
-        //    //Flat flat = new Flat { OwnerName = pvm.OwnerName, PhoneNumber = pvm.PhoneNumber, Description = pvm.Description, Price = pvm.Price };
-        //    //if (id != flat.RoomID)
-        //    //{
-        //    //    return NotFound();
-        //    //}
-
-        //    if (pvm.Days == null)
-        //    {
-        //        List<Day> DaysList = new List<Day>();
-        //        int a = 30;
-        //        while (a > 0)
-        //        {
-        //            DaysList.Add(new Day { Booked = false });
-        //            --a;
-        //        }
-        //        flat.Days = DaysList;
-        //    }
-        //    if (pvm.Image != null)
-        //    {
-        //        byte[] imageData = null;
-        //        // считываем переданный файл в массив байтов
-        //        using (var binaryReader = new BinaryReader(pvm.Image.OpenReadStream()))
-        //        {
-        //            imageData = binaryReader.ReadBytes((int)pvm.Image.Length);
-        //        }
-        //        // установка массива байтов
-        //        flat.Image = imageData;
-        //    }
-        //    if (ModelState.IsValid)
-        //    {
-        //        try
-        //        {
-        //            _context.Update(flat);
-        //            await _context.SaveChangesAsync();
-        //        }
-        //        catch (DbUpdateConcurrencyException)
-        //        {
-        //            if (!FlatExists(flat.RoomID))
-        //            {
-        //                return NotFound();
-        //            }
-        //            else
-        //            {
-        //                throw;
-        //            }
-        //        }
-        //        return RedirectToAction(nameof(Index));
-        //    }
-        //    //ViewData["CalendarID"] = new SelectList(_context.Set<Day>(), "CalendarID", "CalendarID", flat.Days);
-        //    return View(flat);
-        //}
-        //
+        
         public async Task<IActionResult> Edit(int? id, FlatViewImage pvm)
         {
             Flat flat = await _context.Flat.FindAsync(id);
@@ -216,23 +150,7 @@ namespace OneDayFlat.Controllers
             }
             return NotFound();
         }
-        //[HttpPost]
-        //public async Task<IActionResult> Edit(Flat flat, FlatViewImage pvm)
-        //{
-
-
-        //    
-        //}
-
-
-
-
-
-
-
-
-
-
+       
         // GET: FlatTableView/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
