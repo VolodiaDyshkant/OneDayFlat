@@ -38,7 +38,6 @@ namespace OneDayFlat.Models
         //public virtual Calendar Calendar { get; set; }
 
         public List<UserFlat> UserFlat { get; set; }
-
         public IList<Day> Days { get; set; }
     }
 }

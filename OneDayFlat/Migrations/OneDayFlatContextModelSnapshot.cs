@@ -44,6 +44,8 @@ namespace OneDayFlat.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("DayID");
+
                     b.Property<string>("Description")
                         .IsRequired();
 
