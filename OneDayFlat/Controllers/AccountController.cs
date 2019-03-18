@@ -84,7 +84,8 @@ namespace OneDayFlat.Controllers
             {
                 //new Claim(ClaimsIdentity.DefaultNameClaimType, userName)
                 new Claim(ClaimsIdentity.DefaultNameClaimType, user.Login),
-                new Claim(ClaimsIdentity.DefaultRoleClaimType, user.Role?.Name)
+                new Claim(ClaimsIdentity.DefaultRoleClaimType, user.Role?.Name),
+                new Claim(ClaimTypes.Sid, user.UserID.ToString())
             };
 
             ClaimsIdentity id = new ClaimsIdentity(claims, "ApplicationCookie", ClaimsIdentity.DefaultNameClaimType, ClaimsIdentity.DefaultRoleClaimType);
