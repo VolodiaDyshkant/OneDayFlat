@@ -27,6 +27,8 @@ namespace OneDayFlat.Migrations
 
                     b.Property<bool>("Booked");
 
+                    b.Property<DateTime>("Date");
+
                     b.Property<int>("FlatID");
 
                     b.Property<int?>("UserID");
@@ -44,8 +46,6 @@ namespace OneDayFlat.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("DayID");
-
                     b.Property<string>("Description")
                         .IsRequired();
 
@@ -55,7 +55,8 @@ namespace OneDayFlat.Migrations
                         .IsRequired();
 
                     b.Property<string>("PhoneNumber")
-                        .IsRequired();
+                        .IsRequired()
+                        .HasMaxLength(10);
 
                     b.Property<decimal>("Price");
 

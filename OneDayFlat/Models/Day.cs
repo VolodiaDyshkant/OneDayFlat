@@ -12,6 +12,9 @@ namespace OneDayFlat.Models
         [Key]
         public int DayID { get; set; }
 
+        [DataType(DataType.Date)]
+        public DateTime Date { get; set; }
+
         public bool Booked { get; set; }
 
         //[ForeignKey("Calendar")]

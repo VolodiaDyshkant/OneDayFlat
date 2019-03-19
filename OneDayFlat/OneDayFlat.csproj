@@ -19,4 +19,12 @@
     <Folder Include="wwwroot\File\" />
   </ItemGroup>
 
+
+  <ItemGroup>
+    <None Include="wwwroot\Content\code.js" />
+    <None Include="wwwroot\Content\kalendar.js" />
+    <None Include="wwwroot\Content\style.css" />
+    <None Include="wwwroot\Content\styleKalendar.css" />
+  </ItemGroup>
+
 </Project>

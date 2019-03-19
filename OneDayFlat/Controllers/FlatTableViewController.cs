@@ -192,6 +192,8 @@ namespace OneDayFlat.Controllers
             return _context.Flat.Any(e => e.RoomID == id);
         }
 
+        //[HttpPost]
+        //public async Task<IActionResult> PostDay
 
         [AcceptVerbs("Get", "Post")]
         public async Task<IActionResult> CheckEmail(string email)

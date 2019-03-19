@@ -77,7 +77,7 @@ namespace OneDayFlat
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Account}/{action=Login}/{id?}");
+                    template: "{controller=FlatTableView}/{action=Index}/{id?}");
             });
         }
     }
